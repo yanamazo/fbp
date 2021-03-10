@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d08926ba-7589-4c58-a1f2-cf91561ada93" name="Default Changelist" comment="new function add" />
+    <list default="true" id="d08926ba-7589-4c58-a1f2-cf91561ada93" name="Default Changelist" comment="app instead of application" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +71,7 @@
     <MESSAGE value="requirements add" />
     <MESSAGE value="procfile add" />
     <MESSAGE value="new function add" />
-    <option name="LAST_COMMIT_MESSAGE" value="new function add" />
+    <MESSAGE value="app instead of application" />
+    <option name="LAST_COMMIT_MESSAGE" value="app instead of application" />
   </component>
 </project>

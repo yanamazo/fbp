@@ -13,15 +13,10 @@ app = Flask(__name__)
 
 @app.route('/hello', methods=['GET'])
 def hello():
-    return 'Hello!'
+    return "Hello! It's an app for using FB Conversions API"
 
 @app.route("/pixel", methods=['POST'])
 def pixel():
-    # PROJECT = 'fb-pixel-app'
-    # global_log_fields = {}
-    # trace_header = request.headers.get('X-Cloud-Trace-Context')
-    # trace = trace_header.split('/')
-    # global_log_fields['logging.googleapis.com/trace'] = (f"projects/{PROJECT}/traces/{trace[0]}")
     access_token = request.headers.get('token')
     pixel_id = request.headers.get('pixel')
     page_id = request.headers.get('page_id')
@@ -30,7 +25,6 @@ def pixel():
     now = int(time.time())
     action_source = ActionSource('chat')
     payload = request.json['payload']
-    test_event_code = payload['test_event_code']
 
     if payload['opt_out'].lower().strip() == 'false':
         opt_out = False
@@ -73,13 +67,19 @@ def pixel():
     )
 
     events = [event_0]
-    event_request = EventRequest(
-        events=events,
-        pixel_id=pixel_id,
-        test_event_code=test_event_code
-    )
 
-    submitted = event_request.get_params()
+    if payload['test_event_code'] == '':
+        event_request = EventRequest(
+            events=events,
+            pixel_id=pixel_id,
+        )
+    else:
+        test_event_code = payload['test_event_code']
+        event_request = EventRequest(
+            events=events,
+            pixel_id=pixel_id,
+            test_event_code=test_event_code
+        )
 
     try:
         event_response = event_request.execute()
@@ -95,7 +95,6 @@ def pixel():
         response = event_response.to_dict()
         return response
     finally:
-        entry = dict(message={'page_id': page_id, 'log': response, 'submitted': submitted},
-                     component='arbitrary-property')
+        entry = dict(message={'page_id': page_id, 'log': response})
         print(json.dumps(entry))
 
