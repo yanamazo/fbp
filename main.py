@@ -16,7 +16,7 @@ def hello():
     return 'Hello!'
 
 @app.route("/pixel", methods=['POST'])
-def pixel(request):
+def pixel():
     # PROJECT = 'fb-pixel-app'
     # global_log_fields = {}
     # trace_header = request.headers.get('X-Cloud-Trace-Context')
