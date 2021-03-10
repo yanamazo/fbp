@@ -9,13 +9,13 @@ from facebook_business.api import FacebookAdsApi
 from facebook_business.exceptions import FacebookRequestError
 from flask import Flask, request
 
-application = Flask(__name__)
+app = Flask(__name__)
 
-@application.route('/hello', methods=['GET'])
+@app.route('/hello', methods=['GET'])
 def hello():
     return 'Hello!'
 
-@application.route("/pixel", methods=['POST'])
+@app.route("/pixel", methods=['POST'])
 def pixel(request):
     # PROJECT = 'fb-pixel-app'
     # global_log_fields = {}
