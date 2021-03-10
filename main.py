@@ -11,9 +11,12 @@ from flask import Flask, request
 
 application = Flask(__name__)
 
+@application.route('/hello', methods=['GET'])
+def hello():
+    return 'Hello!'
 
 @application.route("/pixel", methods=['POST'])
-def pixel():
+def pixel(request):
     # PROJECT = 'fb-pixel-app'
     # global_log_fields = {}
     # trace_header = request.headers.get('X-Cloud-Trace-Context')

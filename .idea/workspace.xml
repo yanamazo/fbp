@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d08926ba-7589-4c58-a1f2-cf91561ada93" name="Default Changelist" comment="debug false">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="d08926ba-7589-4c58-a1f2-cf91561ada93" name="Default Changelist" comment="procfile add" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +68,8 @@
     <MESSAGE value="pixel api complete" />
     <MESSAGE value="gitignore add" />
     <MESSAGE value="debug false" />
-    <option name="LAST_COMMIT_MESSAGE" value="debug false" />
+    <MESSAGE value="requirements add" />
+    <MESSAGE value="procfile add" />
+    <option name="LAST_COMMIT_MESSAGE" value="procfile add" />
   </component>
 </project>
