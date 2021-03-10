@@ -99,6 +99,3 @@ def pixel(request):
                      component='arbitrary-property')
         print(json.dumps(entry))
 
-
-if __name__ == '__main__':
-    application.run()
