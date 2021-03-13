@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 @app.route('/hello', methods=['GET'])
 def hello():
-    return "Hello! It's an app for using FB Conversions API"
+    return "Hello! It's an app for using FB Conversions API "
 
 @app.route("/pixel", methods=['POST'])
 def pixel():
@@ -24,7 +24,7 @@ def pixel():
     FacebookAdsApi.init(access_token=access_token)
     now = int(time.time())
     action_source = ActionSource('chat')
-    payload = request.json['payload']
+    payload = request.json
 
     if payload['opt_out'].lower().strip() == 'false':
         opt_out = False
